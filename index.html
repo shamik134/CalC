@@ -73,6 +73,7 @@ button-element{
 	height: 100%;
 	width: 100%;
 }
+
 </style>
 
 </head>
@@ -80,19 +81,37 @@ button-element{
 <body unresolved>
 	<core-header-panel> 
 		<core-toolbar> 
-			<paper-tabs id="tabs" selected="all" self-end> 
-				<paper-tab name="all">Dark</paper-tab>
-				<paper-tab name="favorites">Light</paper-tab> 
+			<paper-tabs id="tabs" selected="light" self-end> 
+				<paper-tab name="dark" id="dark">Dark</paper-tab>
+				<paper-tab name="light" id="light">Light</paper-tab> 
 			</paper-tabs> 
 		</core-toolbar> 
 		
-		<div class="container" vertical layout>			
-			<button-element ></button-element>
-		</div>	
+		<div class="container" vertical layout>
+			<button-element id='calC'></button-element>
+		</div>			
 	<!-- main page content will go here --> 
 	</core-header-panel>
 	<script>
-	
+		var tabs = {
+			dark: document.querySelector('#dark'),
+			light: document.querySelector('#light')
+		};
+		
+		var cal = document.querySelector('#calC');
+		cal.classList.add('light');
+
+		tabs.dark.addEventListener('click', function(e) {
+			cal.classList.add('dark');
+			cal.classList.remove('light');
+			
+		});
+		
+		tabs.light.addEventListener('click', function(e) {
+			cal.classList.add('light');
+			cal.classList.remove('dark');
+		});
+		
 	</script>
 </body>
 

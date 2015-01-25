@@ -6,121 +6,134 @@
 			
 		</style>
 		
-		<textarea class="three-quarter-width" id="query" disabled="disabled">0</textarea>
-		<textarea class="quarter-width right" id="result" disabled="disabled"></textarea>
-		
-		<ul class="number">		
-			<li class="half-width special">
-				<paper-button raised on-click="{{buttonClick}}" data-but="ce">CE</paper-button>
-			</li>
-			<li class="half-width special">
-				<paper-button raised on-click="{{buttonClick}}" data-but="=">=</paper-button>
-			</li>	
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="7">7</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="8">8</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="9">9</paper-button>
-			</li>
-			<li class="quarter-width function">
-				<paper-button raised on-click="{{buttonClick}}" data-but="+">+</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="4">4</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="5">5</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="6">6</paper-button>
-			</li>
-			<li class="quarter-width function">
-				<paper-button raised on-click="{{buttonClick}}" data-but="-">-</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="1">1</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="2">2</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="3">3</paper-button>
-			</li>
-			<li class="quarter-width function">
-				<paper-button raised on-click="{{buttonClick}}" data-but="*">x</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but=".">.</paper-button>
-			</li>
-			<li class="quarter-width">
-				<paper-button raised on-click="{{buttonClick}}" data-but="0">0</paper-button>
-			</li>
-			<li class="quarter-width function">
-				<paper-button raised on-click="{{buttonClick}}" data-but="sqrt">Sqrt</paper-button>
-			</li>
-			<li class="quarter-width function">
-				<paper-button raised on-click="{{buttonClick}}" data-but="/">/</paper-button>
-			</li>			
-		</ul>
+		<div id="element">
+			<textarea class="three-quarter-width" id="query" disabled="disabled">0</textarea>
+			<textarea class="quarter-width right" id="result" disabled="disabled"></textarea>
+			
+			<ul class="number">		
+				<li class="half-width special">
+					<paper-button raised on-click="{{buttonClick}}" data-but="ce">CE</paper-button>
+				</li>
+				<li class="half-width special">
+					<paper-button raised on-click="{{buttonClick}}" data-but="=">=</paper-button>
+				</li>	
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="7">7</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="8">8</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="9">9</paper-button>
+				</li>
+				<li class="quarter-width function">
+					<paper-button raised on-click="{{buttonClick}}" data-but="+">+</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="4">4</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="5">5</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="6">6</paper-button>
+				</li>
+				<li class="quarter-width function">
+					<paper-button raised on-click="{{buttonClick}}" data-but="-">-</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="1">1</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="2">2</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="3">3</paper-button>
+				</li>
+				<li class="quarter-width function">
+					<paper-button raised on-click="{{buttonClick}}" data-but="*">x</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but=".">.</paper-button>
+				</li>
+				<li class="quarter-width">
+					<paper-button raised on-click="{{buttonClick}}" data-but="0">0</paper-button>
+				</li>
+				<li class="quarter-width function">
+					<paper-button raised on-click="{{buttonClick}}" data-but="sqrt">Sqrt</paper-button>
+				</li>
+				<li class="quarter-width function">
+					<paper-button raised on-click="{{buttonClick}}" data-but="/">/</paper-button>
+				</li>			
+			</ul>
+		</div>
 	</template> 
 	<script>
   		Polymer('button-element', {
-      		owner:'shamik',
-      		buttonClick: function(eve, det, sender){
-      			var val = eve.target.attributes['data-but'].value;
-				var types= ['+', '-', '*', '/']      			
-      			
-      			if(this.$.query.value === '0'){
-      				this.$.query.value="";      				
-      			}
-      			
-      			if(types.indexOf(this.$.query.value[this.$.query.value.length - 1]) > -1){      				
-      				if(types.indexOf(val) > -1){
-      					return ;
-      				}
-      			}
-      			
-      			if(isNaN(parseInt(val))){
-      				if(val === '+' || val === '-' || val === '*' || val === '/'){
-    					this.$.query.value += val;
-      				}else if(val === '='){
-      					var res = eval(this.$.query.value);
-      					this.$.result.value = res;      					
-      				}else if(val === 'sqrt'){      					
-      					var res = eval(this.$.query.value);      					
-      					this.$.result.value = Math.sqrt(res);
-      				}else if(val === '.'){
-      					var present = false;
-      					for(i = this.$.query.value.length-1 ; i >= 0; i--){      						
-      						if(!isNaN(this.$.query.value[this.$.query.value[i]])){
-      							continue;
-      						}
-      						
-      						if(types.indexOf(this.$.query.value[i]) > -1){
-      							this.$.query.value += val;
-      							present = true;
-      							break;
-      						}else if(this.$.query.value[i] === '.'){
-      							present = true;
-      							break;
-      						}
-      					}    
-      					
-      					if(!present){
-      						this.$.query.value += val;
-      					}
-      				}else if(val === 'ce'){
-      					this.$.result.value="0";
-      					this.$.query.value="";
-      				}
-      			}else{
-      				this.$.query.value += val;
-      				this.$.result.value="";
-      			}      			
-      		}
+  			created: function(){
+	      		this.owner= 'shamik',
+	      		this.buttonClick= function(eve, det, sender){
+	      			var val = eve.target.attributes['data-but'].value;
+					var types= ['+', '-', '*', '/']      			
+	      			
+	      			if(this.$.query.value === '0'){
+	      				this.$.query.value="";      				
+	      			}
+	      			
+	      			if(types.indexOf(this.$.query.value[this.$.query.value.length - 1]) > -1){      				
+	      				if(types.indexOf(val) > -1){
+	      					return ;
+	      				}
+	      			}
+	      			
+	      			if(isNaN(parseInt(val))){
+	      				if(val === '+' || val === '-' || val === '*' || val === '/'){
+	    					this.$.query.value += val;
+	      				}else if(val === '='){
+	      					var res = eval(this.$.query.value);
+	      					
+	      					var diff = Math.ceil(res) - res;
+	      					
+	      					if(diff > 0){
+	      						this.$.result.value = Number(res).toFixed(2);
+	      					}else{
+	      						this.$.result.value = res;	
+	      					}
+	      					
+	      				}else if(val === 'sqrt'){      					
+	      					var res = eval(this.$.query.value);      					
+	      					this.$.result.value = Number(Math.sqrt(res)).toFixed(2);
+	      				}else if(val === '.'){
+	      					var present = false;
+	      					for(i = this.$.query.value.length-1 ; i >= 0; i--){      						
+	      						if(!isNaN(this.$.query.value[this.$.query.value[i]])){
+	      							continue;
+	      						}
+	      						
+	      						if(types.indexOf(this.$.query.value[i]) > -1){
+	      							this.$.query.value += val;
+	      							present = true;
+	      							break;
+	      						}else if(this.$.query.value[i] === '.'){
+	      							present = true;
+	      							break;
+	      						}
+	      					}    
+	      					
+	      					if(!present){
+	      						this.$.query.value += val;
+	      					}
+	      				}else if(val === 'ce'){
+	      					this.$.result.value="0";
+	      					this.$.query.value="";
+	      				}
+	      			}else{
+	      				this.$.query.value += val;
+	      				this.$.result.value="";
+	      			}      			
+	      		}
+  				
+  			}
     	});
 	</script> 
 </polymer-element>

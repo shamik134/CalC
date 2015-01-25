@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>CalC</title>
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+<script src="components/webcomponentsjs/webcomponents.js"></script>
+<!-- <script src="elements/calculator/calculator.js"></script>
+
+  <link rel="import" href="elements/calculator/calculator.html">-->
+  <!-- <link rel="import" href="elements/calculator/calculator.css"> -->
+<link rel="import" href="components/core-header-panel/core-header-panel.html">
+<link rel="import" href="components/core-toolbar/core-toolbar.html">
+<link rel="import" href="components/paper-tabs/paper-tabs.html">
+<link rel="import" href="elements/button.html">
+<link rel="import" href="../components/paper-button/paper-button.html">
+
+<style>
+html,body {
+	height: 100%;
+	margin: 0;
+	background-color: #E5E5E5;
+	font-family: 'RobotoDraft', sans-serif;
+	
+	/* -webkit-box-sizing: border-box; */ /* Safari/Chrome, other WebKit */
+	/* -moz-box-sizing: border-box; */    /* Firefox, other Gecko */
+	/* box-sizing: border-box; */
+}
+
+core-header-panel {
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+core-toolbar {
+	background: #03a9f4;
+	color: white;
+}
+
+#tabs {
+	width: 100%;
+	margin: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-transform: uppercase;
+}
+
+paper-tabs{
+	height: 100%;
+}
+.container {
+	width: 100%;
+	height: 500px;	
+}
+
+@media ( min-width : 500px) {
+	#tabs {
+		width: 100%;
+	}
+	.container {
+		width: 100%;
+	}
+}
+
+button-element{
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+}
+</style>
+
+</head>
+
+<body unresolved>
+	<core-header-panel> 
+		<core-toolbar> 
+			<paper-tabs id="tabs" selected="all" self-end> 
+				<paper-tab name="all">Dark</paper-tab>
+				<paper-tab name="favorites">Light</paper-tab> 
+			</paper-tabs> 
+		</core-toolbar> 
+		
+		<div class="container" vertical layout>			
+			<button-element ></button-element>
+		</div>	
+	<!-- main page content will go here --> 
+	</core-header-panel>
+	<script>
+	
+	</script>
+</body>
+
+</html>

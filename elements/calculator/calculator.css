@@ -1,0 +1,68 @@
+/* line 1, calculator.scss */
+textarea {
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  padding: 2px;
+  text-align: right;
+  font-size: 2.5em;
+  resize: none;
+}
+
+/* line 11, calculator.scss */
+.number {
+  padding: 0;
+  height: 100%;
+  margin: 0;
+}
+/* line 16, calculator.scss */
+.number li {
+  background-color: #eaeaea;
+  box-sizing: border-box;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  color: red;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  font-size: 2.5em;
+  float: left;
+  height: 20%;
+}
+/* line 28, calculator.scss */
+.number li.function {
+  color: #d77a3d;
+  background-color: #F0FFCC;
+}
+/* line 33, calculator.scss */
+.number li.special {
+  color: #ff6600;
+  background-color: #FFF0BB;
+}
+/* line 38, calculator.scss */
+.number li paper-button {
+  display: block;
+  height: 100%;
+  margin: auto;
+  min-width: 0;
+  width: 100%;
+}
+
+/* line 48, calculator.scss */
+.three-quarter-width {
+  width: 75%;
+}
+
+/* line 52, calculator.scss */
+.quarter-width {
+  width: 25%;
+}
+
+/* line 56, calculator.scss */
+.half-width {
+  width: 50%;
+}
+
+/* line 60, calculator.scss */
+.right {
+  float: right;
+}

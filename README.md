@@ -7,9 +7,10 @@ Start the web app normally as we start any Polymer app.
 Goto : http://localhost:8000/
 The app shall open.
 
-There are 2 themes presented by tabs on the top: Light (dafult) and Dark.
+There are 2 themes presented by tabs on the top: Light (default) and Dark.
 Some commands
 CE : clears the input screen
 SQRT : square roots the given number. If the number needs to be computed, then it computes and square roots it.
+-/+ : Toggles between positive and negative number
 
 The input box is on the left and The result box is on the right.

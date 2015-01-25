@@ -7,13 +7,13 @@
 			<textarea class="quarter-width right" id="result" disabled="disabled"></textarea>
 			
 			<ul class="number">		
-				<li class="half-width special">
+				<li class="quarter-width special">
 					<paper-button raised on-click="{{buttonClick}}" data-but="ce">CE</paper-button>
 				</li>
 				<li class="quarter-width special">
 					<paper-button raised on-click="{{buttonClick}}" data-but="=">=</paper-button>
 				</li>
-				<li class="quarter-width special">
+				<li class="half-width special">
 					<paper-button raised on-click="{{buttonClick}}" data-but="|">-/+</paper-button>
 				</li>	
 				<li class="quarter-width">
@@ -101,15 +101,15 @@
 	    					this.$.query.value += val;
 	      				}else if(val === '='){
 	      					var res = eval(this.$.query.value);
-	      					
-	      					var diff = Math.ceil(res) - res;
-	      					
-	      					if(diff > 0){
-	      						this.$.result.value = Number(res).toFixed(2);
-	      					}else{
-	      						this.$.result.value = res;	
+	      					if(res){
+		      					var diff = Math.ceil(res) - res;
+		      						
+		      					if(diff > 0){
+		      						this.$.result.value = Number(res).toFixed(2);
+		      					}else{
+		      						this.$.result.value = res;	
+		      					}
 	      					}
-	      					
 	      				}else if(val === 'sqrt'){      					
 	      					var res = eval(this.$.query.value);      					
 	      					this.$.result.value = Number(Math.sqrt(res)).toFixed(2);

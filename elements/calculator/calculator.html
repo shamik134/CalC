@@ -1,10 +1,6 @@
 <polymer-element name="button-element">	
 	<template>
-		<link rel="stylesheet" href="calculator/calculator.css">
-
-		<style>
-			
-		</style>
+		<link rel="stylesheet" href="calculator.css">
 		
 		<div id="element">
 			<textarea class="three-quarter-width" id="query" disabled="disabled">0</textarea>
@@ -14,8 +10,11 @@
 				<li class="half-width special">
 					<paper-button raised on-click="{{buttonClick}}" data-but="ce">CE</paper-button>
 				</li>
-				<li class="half-width special">
+				<li class="quarter-width special">
 					<paper-button raised on-click="{{buttonClick}}" data-but="=">=</paper-button>
+				</li>
+				<li class="quarter-width special">
+					<paper-button raised on-click="{{buttonClick}}" data-but="|">-/+</paper-button>
 				</li>	
 				<li class="quarter-width">
 					<paper-button raised on-click="{{buttonClick}}" data-but="7">7</paper-button>
@@ -80,14 +79,25 @@
 	      				this.$.query.value="";      				
 	      			}
 	      			
-	      			if(types.indexOf(this.$.query.value[this.$.query.value.length - 1]) > -1){      				
-	      				if(types.indexOf(val) > -1){
-	      					return ;
+					/* condition to check the keys after adding operator */					
+	      			if(types.indexOf(this.$.query.value[this.$.query.value.length - 1]) > -1){
+	      				if(val === this.$.query.value[this.$.query.value.length - 1]){
+	      					return;	      					
+	      				}else if(types.indexOf(val) > -1){
+	      					this.$.query.value[this.$.query.value.length - 1] = val;
+	      					return;
+	      				}
+	      				
+	      				if(isNaN(parseInt(val))){
+	      					return;
 	      				}
 	      			}
 	      			
+					/* compute input */
 	      			if(isNaN(parseInt(val))){
-	      				if(val === '+' || val === '-' || val === '*' || val === '/'){
+	      				if(val === '|'){
+	      					this.$.query.value = 0 - eval(this.$.query.value);	      					
+	      				}else if(val === '+' || val === '-' || val === '*' || val === '/'){
 	    					this.$.query.value += val;
 	      				}else if(val === '='){
 	      					var res = eval(this.$.query.value);

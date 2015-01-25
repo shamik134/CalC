@@ -1,16 +1,18 @@
 textarea {
-	width: 100%;
-	height: 60px;
+	border-right: 2px solid;
 	box-sizing: border-box;
-	padding: 2px;
-	text-align: right;
 	font-size: 2.5em;
+	height: 60px;
+	padding: 2px 5px;
 	resize: none;
+	text-align: right;
+	width: 100%;
 }
 
 .number{	
 	padding: 0;
 	height: 100%;
+	list-style: outside none none;
 	margin: 0;
     
 	li{

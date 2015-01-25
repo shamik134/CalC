@@ -6,6 +6,8 @@
 			<textarea class="three-quarter-width" id="query" disabled="disabled">0</textarea>
 			<textarea class="quarter-width right" id="result" disabled="disabled"></textarea>
 			
+			<!-- repeat wasnt working, so tried this -->
+			
 			<ul class="number">		
 				<li class="quarter-width special">
 					<paper-button raised on-click="{{buttonClick}}" data-but="ce">CE</paper-button>
@@ -141,8 +143,7 @@
 	      				this.$.query.value += val;
 	      				this.$.result.value="";
 	      			}      			
-	      		}
-  				
+	      		}  				
   			}
     	});
 	</script> 

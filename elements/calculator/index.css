@@ -1,0 +1,65 @@
+/* line 1, index.scss */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #E5E5E5;
+  font-family: 'RobotoDraft', sans-serif;
+}
+
+/* line 8, index.scss */
+core-header-panel {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 14, index.scss */
+core-toolbar {
+  background: #03a9f4;
+  color: white;
+}
+
+/* line 19, index.scss */
+#tabs {
+  width: 100%;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+/* line 29, index.scss */
+paper-tabs {
+  height: 100%;
+}
+
+/* line 32, index.scss */
+.container {
+  width: 100%;
+  height: 500px;
+}
+
+@media (min-width: 500px) {
+  /* line 38, index.scss */
+  #tabs {
+    width: 100%;
+  }
+
+  /* line 41, index.scss */
+  .container {
+    width: 100%;
+  }
+}
+/* line 46, index.scss */
+button-element {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+/* line 51, index.scss */
+button-element.dark {
+  -webkit-filter: invert(75%);
+  filter: invert(75%);
+}
